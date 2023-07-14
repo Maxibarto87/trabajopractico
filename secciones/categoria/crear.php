@@ -13,7 +13,7 @@
                   <input type="text" class="form-control" name="ct_Descripcion_categoria" id="ct_Descripcion_categoria" aria-describedby="helpId" placeholder="Ingrese Descripcion de Categoria">
                   <br>
                  <button type="submit" name="" id="" class="btn btn-primary" role="button">Enviar</button>       
-                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a>
+                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a> <!-- para agregar la direccion se hace asi -->
                 </div>
             </form>
         </div>

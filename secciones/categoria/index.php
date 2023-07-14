@@ -21,7 +21,7 @@
                     <td>NOMBRE CATEGORIA</td>
                     <td>DESCRIPCION CATEGORIA</td>
                     <td>
-                        <a name="" id="" class="btn btn-primary" href="#" role="button">Editar</a> 
+                        <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> 
                         <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
                     </td>
                         
