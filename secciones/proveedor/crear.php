@@ -16,7 +16,7 @@
                   <input type="text" class="form-control" name="pr_Apellido" id="pr_Apellido" aria-describedby="helpId" placeholder="Ingrese su Apellido">
                         <br>
                   <label for="pr_Email" class="form-label">Email</label>
-                  <input type="email" class="form-control" name="pr_Email" id="pr_Email" aria-describedby="helpId" placeholder="Ingrese su Email">
+                  <input type="email" class="form-control" name="pr_Email" id="pr_Email" aria-describedby="emailhelpId" placeholder="Ingrese su Email">
                         <br>
                   <label for="pr_Direccion" class="form-label">Dirección</label>
                   <input type="text" class="form-control" name="pr_Direccion" id="pr_Direccion" aria-describedby="helpId" placeholder="Ingrese su Dirección">

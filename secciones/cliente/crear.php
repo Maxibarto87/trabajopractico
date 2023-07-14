@@ -13,7 +13,7 @@
                   <input type="text" class="form-control" name="cl_Apellido" id="cl_Apellido" aria-describedby="helpId" placeholder="Ingrese su Apellido">
                   <br>
                   <label for="cl_Email" class="form-label">Email</label>
-                  <input type="email" class="form-control" name="cl_Email" id="cl_Email" aria-describedby="helpId" placeholder="Ingrese su Email">
+                  <input type="email" class="form-control" name="cl_Email" id="cl_Email" aria-describedby="emailhelpId" placeholder="Ingrese su Email">
                   <br>
                   <label for="cl_Direccion" class="form-label">Dirección</label>
                   <input type="text" class="form-control" name="cl_Direccion" id="cl_Direccion" aria-describedby="helpId" placeholder="Ingrese su Dirección">
