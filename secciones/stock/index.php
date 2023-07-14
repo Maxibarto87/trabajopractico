@@ -1,3 +1,13 @@
+<?php require_once("../../libs/conexion.php");
+
+$sentencia=$conexion->prepare("SELECT * FROM `stock`");
+$sentencia->execute();
+$lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+print_r($lista_stock)
+
+?>
+
 <?php require_once("../../templates/header.php") ?>
 <h1>Stock</h1>   
 <div class="card">
@@ -20,13 +30,28 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($lista_stock as $registro) {?>
+    
+
                 <tr class="">
-                    <td scope="row">ID</td>
-                    <td>Nombre del Producto</td>
-                    <td>Precio Por unidad</td>
-                    <td>Número de existencia</td>
-                    <td>Categoria</td>
-                    <td>Cantidad total en existencia</td>
+                    <td scope="row">
+                        <?php echo $registro['id_st']; ?>
+                    </td>
+                    <td>
+                        <?php echo $registro['st_Nombre_del_producto']; ?>
+                    </td>
+                    <td>
+                        <?php echo $registro['st_Precio_por_unidad']; ?>
+                    </td>
+                    <td>
+                        <?php echo $registro['st_N_de_existencia']; ?>
+                    </td>
+                    <td>
+                        <?php echo $registro['st_Categoria']; ?>
+                    </td>
+                    <td>
+                        <?php echo $registro['st_Cantidad_total_en_existencia']; ?>
+                    </td>
                     <td>
                         <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> 
                         <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
@@ -34,7 +59,9 @@
                         
                 
                 </tr>
-                
+                <?php }?>
+    
+        
             </tbody>
         </table>
     </div>
