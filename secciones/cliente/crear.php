@@ -19,10 +19,10 @@
                   <input type="text" class="form-control" name="cl_Direccion" id="cl_Direccion" aria-describedby="helpId" placeholder="Ingrese su Dirección">
                   <br>
                   <label for="cl_CUIT" class="form-label">CUIT</label>
-                  <input type="text" class="form-control" name="cl_CUIT" id="cl_CUIT" aria-describedby="helpId" placeholder="Ingrese su Numero de CUIT">
+                  <input type="number" class="form-control" name="cl_CUIT" id="cl_CUIT" aria-describedby="helpId" placeholder="Ingrese su Numero de CUIT">
                   <br>
                   <label for="cl_Telefono" class="form-label">Teléfono</label>
-                  <input type="text" class="form-control" name="cl_Telefono" id="cl_Telefono" aria-describedby="helpId" placeholder="Ingrese su Numero de Teléfono">
+                  <input type="number" class="form-control" name="cl_Telefono" id="cl_Telefono" aria-describedby="helpId" placeholder="Ingrese su Numero de Teléfono">
                   <br>
                  <button type="submit" name="" id="" class="btn btn-primary" role="button">Enviar</button>       
                  <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a> <!-- para agregar la direccion se hace asi -->

@@ -22,10 +22,10 @@
                   <input type="text" class="form-control" name="pr_Direccion" id="pr_Direccion" aria-describedby="helpId" placeholder="Ingrese su Dirección">
                         <br>
                   <label for="pr_CUIT" class="form-label">CUIT</label>
-                  <input type="text" class="form-control" name="pr_CUIT" id="pr_CUIT" aria-describedby="helpId" placeholder="Ingrese Nombre de Categoria">
+                  <input type="number" class="form-control" name="pr_CUIT" id="pr_CUIT" aria-describedby="helpId" placeholder="Ingrese Nombre de Categoria">
                         <br>
                   <label for="pr_Telefono" class="form-label">Teléfono</label>
-                  <input type="text" class="form-control" name="pr_Telefono" id="pr_Telefono" aria-describedby="helpId" placeholder="Ingrese Descripcion de Categoria">
+                  <input type="number" class="form-control" name="pr_Telefono" id="pr_Telefono" aria-describedby="helpId" placeholder="Ingrese Descripcion de Categoria">
                         <br>
                  <button type="submit" name="" id="" class="btn btn-primary" role="button">Enviar</button>       
                  <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a> <!-- para agregar la direccion se hace asi -->
