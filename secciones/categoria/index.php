@@ -1,10 +1,10 @@
 <?php require_once("../../templates/header.php") ?>
-    Mostrar Categoria
-
+<h1>Categoria</h1>   
 <div class="card">
     <div class="card-header">
-        Categoria
+        <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar Categoria</a>
     </div>
+    <div class="card-body">
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -20,7 +20,12 @@
                     <td scope="row">ID</td>
                     <td>NOMBRE CATEGORIA</td>
                     <td>DESCRIPCION CATEGORIA</td>
-                    <td>Editar | Eliminar</td>
+                    <td>
+                        <a name="" id="" class="btn btn-primary" href="#" role="button">Editar</a> 
+                        <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
+                    </td>
+                        
+                
                 </tr>
                 
             </tbody>
@@ -28,5 +33,6 @@
     </div>
     
     
-</div>    
+</div> 
+</div>  
 <?php require_once("../../templates/footer.php") ?>
