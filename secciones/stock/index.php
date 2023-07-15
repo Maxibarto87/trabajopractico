@@ -61,7 +61,7 @@ $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $registro['st_Cantidad_total_en_existencia']; ?>
                             </td>
                             <td>
-                                <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Editar</a>
                                 <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Eliminar</a>
                             </td>
                         </tr>
