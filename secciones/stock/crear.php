@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <?php require_once("../../templates/header.php"); ?>
 <div class="card">
     <div class="card-header">
-        Datos de Stock
+        Agregar Stock
     </div>
     <div class="card-body">
         <form action="" method="post">

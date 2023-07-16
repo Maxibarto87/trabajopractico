@@ -1,3 +1,24 @@
+<?php
+
+require_once("../../libs/conexion.php");
+
+if (isset($_GET["txtID"])) {
+    // Recolectar datos con método GET
+    $txtID = (isset($_GET["txtID"]) ? $_GET["txtID"] : "");
+    $sentencia = $conexion->prepare("DELETE FROM `stock` WHERE `id_pr` = :id_pr");
+    // Asignar los valores que vienen del método GET
+    $sentencia->bindParam(":id_pr", $txtID);
+    $sentencia->execute();
+    header("Location: index.php");
+    exit();
+}
+
+$sentencia = $conexion->prepare("SELECT * FROM `proveedor`");
+$sentencia->execute();
+$lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 
 
 <?php require_once("../../templates/header.php") ?>
@@ -23,22 +44,38 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="">
-                    <td scope="row">ID</td>
-                    <td>Nombre de fantasía</td>
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Email</td>
-                    <td>Dirección</td>
-                    <td>Cuit</td>
-                    <td>Telefono</td>
-                    <td>
-                        <a name="" id="" class="btn btn-info" href="#" role="button">Editar</a> 
-                        <a name="" id="" class="btn btn-danger" href="#" role="button">Eliminar</a>
-                    </td>
-                        
-                
-                </tr>
+            <?php foreach ($lista_proveedor as $registro) { ?>
+                        <tr>
+                            <td scope="row">
+                                <?php echo $registro['id_pr']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Nombre_de_fantasia']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Nombre']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Apellido']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Email']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Direccion']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_CUIT']; ?>
+                            </td>
+                            <td>
+                                <?php echo $registro['pr_Telefono']; ?>
+                            </td>
+                            <td>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Eliminar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 
             </tbody>
         </table>

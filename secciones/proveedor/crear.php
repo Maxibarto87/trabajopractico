@@ -1,3 +1,38 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once("../../libs/conexion.php");
+
+    // Recolectar datos del método POST
+    $st_Nombre_del_producto = isset($_POST["pr_Nombre_de_fantasia"]) ? $_POST["pr_Nombre_de_fantasia"] : "";
+    $st_Precio_por_unidad = isset($_POST["pr_Nombre"]) ? $_POST["pr_Nombre"] : "";
+    $st_N_de_existencia = isset($_POST["pr_Apellido"]) ? $_POST["pr_Apellido"] : "";
+    $st_Categoria = isset($_POST["pr_Email"]) ? $_POST["pr_Email"] : "";
+    $st_Categoria = isset($_POST["pr_Direccion"]) ? $_POST["pr_Direccion"] : "";
+    $st_Categoria = isset($_POST["pr_CUIT"]) ? $_POST["pr_CUIT"] : "";
+    $st_Cantidad_total_en_existencia = isset($_POST["pr_Telefono"]) ? $_POST["pr_Telefono"] : "";
+
+    // Preparar la inserción de datos
+    $sentencia = $conexion->prepare("INSERT INTO proveedor (pr_Nombre_de_fantasia, pr_Nombre, pr_Apellido, pr_Email, pr_Direccion, pr_CUIT, pr_Telefono VALUES (:pr_Nombre_de_fantasia, :pr_Nombre, :pr_Apellido, :pr_Email, :pr_Direccion, :pr_CUIT, pr_Telefono)");
+
+    $sentencia->bindParam(":pr_Nombre_de_fantasia", $pr_Nombre_de_fantasia);
+    $sentencia->bindParam(":pr_Nombre", $pr_Nombre);
+    $sentencia->bindParam(":pr_Apellido", $pr_Apellido);
+    $sentencia->bindParam(":pr_Email", $pr_Email);
+    $sentencia->bindParam(":pr_Direccion", $pr_Direccion);
+    $sentencia->bindParam(":pr_CUIT", $pr_CUIT);
+    $sentencia->bindParam(":pr_Telefono", $pr_Telefono);
+
+    if ($sentencia->execute()) {
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Error al ejecutar la consulta";
+    }
+}
+
+?>
+
 <?php require_once("../../templates/header.php") ?>
 <div class="card">
         <div class="card-header">
