@@ -5,7 +5,7 @@ require_once("../../libs/conexion.php");
 if (isset($_GET["txtID"])) {
     // Recolectar datos con método GET
     $txtID = (isset($_GET["txtID"]) ? $_GET["txtID"] : "");
-    $sentencia = $conexion->prepare("DELETE FROM `stock` WHERE `id_pr` = :id_pr");
+    $sentencia = $conexion->prepare("DELETE FROM `proveedor` WHERE `id_pr` = :id_pr");
     // Asignar los valores que vienen del método GET
     $sentencia->bindParam(":id_pr", $txtID);
     $sentencia->execute();
@@ -15,7 +15,7 @@ if (isset($_GET["txtID"])) {
 
 $sentencia = $conexion->prepare("SELECT * FROM `proveedor`");
 $sentencia->execute();
-$lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+$lista_proveedor = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
