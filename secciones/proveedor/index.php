@@ -71,13 +71,12 @@ $lista_proveedor = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                 <?php echo $registro['pr_Telefono']; ?>
                             </td>
                             <td>
-                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Eliminar</a>
+                                <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_pr']; ?>" role="button">Editar</a>
+                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_pr']; ?>" role="button">Eliminar</a>
                             </td>
                         </tr>
                     <?php } ?>
-                
-            </tbody>
+                </tbody>
         </table>
     </div>
     

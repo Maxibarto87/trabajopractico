@@ -3,7 +3,7 @@ require_once("../../libs/conexion.php");
 
 if (isset($_GET["txtID"])) {
     $txtID = $_GET["txtID"];
-    $sentencia = $conexion->prepare("SELECT * FROM `stock` WHERE `id_st` = :id_pr");
+    $sentencia = $conexion->prepare("SELECT * FROM `proveedor` WHERE `id_pr` = :id_pr");
     $sentencia->bindParam(":id_pr", $txtID);
     $sentencia->execute();
     $registro = $sentencia->fetch(PDO::FETCH_ASSOC);
@@ -22,7 +22,7 @@ if (isset($_GET["txtID"])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $txtID = $_POST['txtID'];
+    
     $pr_Nombre_de_fantasia = $_POST['pr_Nombre_de_fantasia'];
     $pr_Nombre = $_POST['pr_Nombre'];
     $pr_Apellido = $_POST['pr_Apellido'];
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pr_Telefono = $_POST['pr_Telefono'];
     
 
-    $sentencia = $conexion->prepare("UPDATE `stock` SET `pr_Nombre_de_fantasia` = :pr_Nombre_de_fantasia, `pr_Nombre` = :pr_Nombre, `pr_Apellido` = :pr_Apellido, `pr_Email` = :pr_Email, `pr_Direccion` = :pr_Direccion, `pr_CUIT` = :pr_CUIT, `pr_Telefono` = :pr_Telefono WHERE `id_pr` = :id_pr");
+    $sentencia = $conexion->prepare("UPDATE `proveedor` SET `pr_Nombre_de_fantasia` = :pr_Nombre_de_fantasia, `pr_Nombre` = :pr_Nombre, `pr_Apellido` = :pr_Apellido, `pr_Email` = :pr_Email, `pr_Direccion` = :pr_Direccion, `pr_CUIT` = :pr_CUIT, `pr_Telefono` = :pr_Telefono WHERE `id_pr` = :id_pr");
     $sentencia->bindParam(":id_pr", $txtID);
     $sentencia->bindParam(":pr_Nombre_de_fantasia", $pr_Nombre_de_fantasia);
     $sentencia->bindParam(":pr_Nombre", $pr_Nombre);
@@ -80,7 +80,7 @@ require_once("../../templates/header.php");
                   <input type="number" class="form-control" name="pr_Telefono" id="pr_Telefono" aria-describedby="helpId" placeholder="Ingrese Descripcion de Categoria">
                         <br>
                  <button type="submit" name="" id="" class="btn btn-primary" role="button">Editar</button>       
-                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a> <!-- para agregar la direccion se hace asi -->
+                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">Cancelar</a> <!-- para agregar la direccion se hace asi -->
                 </div>
             </form>
         </div>

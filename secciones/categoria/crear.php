@@ -1,3 +1,30 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once("../../libs/conexion.php");
+
+    // Recolectar datos del método POST
+    $ct_Nombre_categoria = isset($_POST["ct_Nombre_categoria"]) ? $_POST["ct_Nombre_categoria"] : "";
+    $ct_Descripcion_categoria = isset($_POST["ct_Descripcion_categoria"]) ? $_POST["ct_Descripcion_categoria"] : "";
+
+
+    // Preparar la inserción de datos
+    $sentencia = $conexion->prepare("INSERT INTO categoria (ct_Nombre_categoria, ct_Descripcion_categoria) VALUES (:ct_Nombre_categoria, :ct_Descripcion_categoria)");
+
+    $sentencia->bindParam(":ct_Nombre_categoria", $ct_Nombre_categoria);
+    $sentencia->bindParam(":ct_Descripcion_categoria", $ct_Descripcion_categoria);
+
+
+    if ($sentencia->execute()) {
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Error al ejecutar la consulta";
+    }
+}
+
+?>
+
 <?php require_once("../../templates/header.php") ?>
     <div class="card">
         <div class="card-header">

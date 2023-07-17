@@ -4,16 +4,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require_once("../../libs/conexion.php");
 
     // Recolectar datos del método POST
-    $st_Nombre_del_producto = isset($_POST["pr_Nombre_de_fantasia"]) ? $_POST["pr_Nombre_de_fantasia"] : "";
-    $st_Precio_por_unidad = isset($_POST["pr_Nombre"]) ? $_POST["pr_Nombre"] : "";
-    $st_N_de_existencia = isset($_POST["pr_Apellido"]) ? $_POST["pr_Apellido"] : "";
-    $st_Categoria = isset($_POST["pr_Email"]) ? $_POST["pr_Email"] : "";
-    $st_Categoria = isset($_POST["pr_Direccion"]) ? $_POST["pr_Direccion"] : "";
-    $st_Categoria = isset($_POST["pr_CUIT"]) ? $_POST["pr_CUIT"] : "";
-    $st_Cantidad_total_en_existencia = isset($_POST["pr_Telefono"]) ? $_POST["pr_Telefono"] : "";
+    $pr_Nombre_de_fantasia = isset($_POST["pr_Nombre_de_fantasia"]) ? $_POST["pr_Nombre_de_fantasia"] : "";
+    $pr_Nombre = isset($_POST["pr_Nombre"]) ? $_POST["pr_Nombre"] : "";
+    $pr_Apellido = isset($_POST["pr_Apellido"]) ? $_POST["pr_Apellido"] : "";
+    $pr_Email = isset($_POST["pr_Email"]) ? $_POST["pr_Email"] : "";
+    $pr_Direccion = isset($_POST["pr_Direccion"]) ? $_POST["pr_Direccion"] : "";
+    $pr_CUIT = isset($_POST["pr_CUIT"]) ? $_POST["pr_CUIT"] : "";
+    $pr_Telefono = isset($_POST["pr_Telefono"]) ? $_POST["pr_Telefono"] : "";
 
     // Preparar la inserción de datos
-    $sentencia = $conexion->prepare("INSERT INTO proveedor (pr_Nombre_de_fantasia, pr_Nombre, pr_Apellido, pr_Email, pr_Direccion, pr_CUIT, pr_Telefono VALUES (:pr_Nombre_de_fantasia, :pr_Nombre, :pr_Apellido, :pr_Email, :pr_Direccion, :pr_CUIT, pr_Telefono)");
+    $sentencia = $conexion->prepare("INSERT INTO proveedor (pr_Nombre_de_fantasia, pr_Nombre, pr_Apellido, pr_Email, pr_Direccion, pr_CUIT, pr_Telefono) VALUES (:pr_Nombre_de_fantasia, :pr_Nombre, :pr_Apellido, :pr_Email, :pr_Direccion, :pr_CUIT, :pr_Telefono)");
 
     $sentencia->bindParam(":pr_Nombre_de_fantasia", $pr_Nombre_de_fantasia);
     $sentencia->bindParam(":pr_Nombre", $pr_Nombre);
@@ -34,6 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <?php require_once("../../templates/header.php") ?>
+
+
 <div class="card">
         <div class="card-header">
             Datos de Proveedores
@@ -63,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <input type="number" class="form-control" name="pr_Telefono" id="pr_Telefono" aria-describedby="helpId" placeholder="Ingrese Descripcion de Categoria">
                         <br>
                  <button type="submit" name="" id="" class="btn btn-primary" role="button">Enviar</button>       
-                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">cancelar</a> <!-- para agregar la direccion se hace asi -->
+                 <a name="" id="" class="btn btn-danger" href="./index.php" role="button">Cancelar</a> <!-- para agregar la direccion se hace asi -->
                 </div>
             </form>
         </div>
