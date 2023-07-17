@@ -35,6 +35,7 @@ $lista_categoria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <th scope="col">ID</th>
                     <th scope="col">Nombre de categoria</th>
                     <th scope="col">Descripcion de categoria</th>
+                    <th scope="col">Acciones</th>
                     
                 </tr>
             </thead>

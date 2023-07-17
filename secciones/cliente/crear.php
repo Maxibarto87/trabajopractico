@@ -1,7 +1,43 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require_once("../../libs/conexion.php");
+
+    // Recolectar datos del método POST
+    $cl_Nombre = isset($_POST["cl_Nombre"]) ? $_POST["cl_Nombre"] : "";
+    $cl_Apellido = isset($_POST["cl_Apellido"]) ? $_POST["cl_Apellido"] : "";
+    $cl_Email = isset($_POST["cl_Email"]) ? $_POST["cl_Email"] : "";
+    $cl_Direccion = isset($_POST["cl_Direccion"]) ? $_POST["cl_Direccion"] : "";
+    $cl_CUIT = isset($_POST["cl_CUIT"]) ? $_POST["cl_CUIT"] : "";
+    $cl_Telefono = isset($_POST["cl_Telefono"]) ? $_POST["cl_Telefono"] : "";
+    
+
+    // Preparar la inserción de datos
+    $sentencia = $conexion->prepare("INSERT INTO cliente (cl_Nombre, cl_Apellido, cl_Email, cl_Direccion, cl_CUIT, cl_Telefono) VALUES (:cl_Nombre, :cl_Apellido, :cl_Email, :cl_Direccion, :cl_CUIT, :cl_Telefono)");
+
+    $sentencia->bindParam(":cl_Nombre", $cl_Nombre);
+    $sentencia->bindParam(":cl_Apellido", $cl_Apellido);
+    $sentencia->bindParam(":cl_Email", $cl_Email);
+    $sentencia->bindParam(":cl_Direccion", $cl_Direccion);
+    $sentencia->bindParam(":cl_CUIT", $cl_CUIT);
+    $sentencia->bindParam(":cl_Telefono", $cl_Telefono);
+    
+
+    if ($sentencia->execute()) {
+        header("Location: index.php");
+        exit();
+    } else {
+        echo "Error al ejecutar la consulta";
+    }
+}
+
+?>
+
+
 <?php require_once("../../templates/header.php") ?>
 <div class="card">
         <div class="card-header">
-            Datos de Clientes
+            Crear Clientes
         </div>
         <div class="card-body">
             <form action="" method="post">
