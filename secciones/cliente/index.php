@@ -17,11 +17,17 @@ $sentencia = $conexion->prepare("SELECT * FROM `cliente`");
 $sentencia->execute();
 $lista_cliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-?>
+require_once("../../templates/header.php");
+if (isset($_GET["mensaje"])) { ?>
 
+<script>
+Swal.fire({
+    icon: "success",
+    title: "<?php echo $_GET['mensaje']; ?>"
+});
+</script>
 
-
-<?php require_once("../../templates/header.php") ?>
+<?php } ?>
 <h1>Cliente</h1>   
 <div class="card">
     <div class="card-header">
@@ -29,7 +35,7 @@ $lista_cliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="card-body">
     <div class="table-responsive">
-        <table class="table">
+        <table class="table" id="table_id">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -68,10 +74,35 @@ $lista_cliente = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </td>
                             <td>
                                 <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_cl']; ?>" role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_cl']; ?>" role="button">Eliminar</a>
+                                <a name="" id="" class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id_cl']; ?>)" role="button">Eliminar</a>
                             </td>
                         </tr>
                     <?php } ?>
                 </tbody>
         </table>
     </div>
+    <script>
+    function borrar(id_cl) {
+  // index.php?txtID=
+  Swal.fire({
+    title: '¿Desea borrar cliente?',
+    text: '¡No podrás recuperarlo!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, borrarlo'
+  }).then((result) => {
+    if (result.isConfirmed) {
+        window.location = 'index.php?txtID=' + id_cl;
+        Swal.fire(
+        '¡Borrado!',
+        'El dato cliente ha sido borrado con éxito',
+        'success'
+      );
+      
+    }
+  });
+}
+</script> 
+    <?php require_once("../../templates/footer.php") ?>

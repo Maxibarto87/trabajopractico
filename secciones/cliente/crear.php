@@ -24,13 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     if ($sentencia->execute()) {
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error al ejecutar la consulta";
-    }
+    header("Location:index.php?mensaje='Cliente creado correctamente'");
 }
-
+}
 ?>
 
 

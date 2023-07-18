@@ -9,7 +9,7 @@ if (isset($_GET["txtID"])) {
     // Asignar los valores que vienen del método GET
     $sentencia->bindParam(":id_st", $txtID);
     $sentencia->execute();
-    header("Location: index.php");
+    header ("Location: index.php?mensaje=".$mensaje='stock Eliminado');
     exit();
 }
 
@@ -17,9 +17,18 @@ $sentencia = $conexion->prepare("SELECT * FROM `stock`");
 $sentencia->execute();
 $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-?>
 
-<?php require_once("../../templates/header.php"); ?>
+require_once("../../templates/header.php");
+if (isset($_GET["mensaje"])) { ?>
+
+<script>
+Swal.fire({
+    icon: "success",
+    title: "<?php echo $_GET['mensaje']; ?>"
+});
+</script>
+
+<?php } ?>
 <h1>Stock</h1>
 <div class="card">
     <div class="card-header">
@@ -27,7 +36,7 @@ $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="table_id">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -62,7 +71,7 @@ $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                             </td>
                             <td>
                                 <a name="" id="" class="btn btn-info" href="editar.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Editar</a>
-                                <a name="" id="" class="btn btn-danger" href="index.php?txtID=<?php echo $registro['id_st']; ?>" role="button">Eliminar</a>
+                                <a name="" id="" class="btn btn-danger" href="javascript:borrar(<?php echo $registro['id_st']; ?>)" role="button">Eliminar</a>
                             </td>
                         </tr>
                     <?php } ?>
@@ -71,4 +80,28 @@ $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </div>
 </div>
+<script>
+    function borrar(id_st) {
+  // index.php?txtID=
+  Swal.fire({
+    title: '¿Desea borrar el stock?',
+    text: '¡No podrás recuperarlo!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, borrarlo'
+  }).then((result) => {
+    if (result.isConfirmed) {
+        window.location = 'index.php?txtID=' + id_st;
+        Swal.fire(
+        '¡Borrado!',
+        'El dato stock ha sido borrado con éxito',
+        'success'
+      );
+      
+    }
+  });
+}
+</script>
 <?php require_once("../../templates/footer.php"); ?>

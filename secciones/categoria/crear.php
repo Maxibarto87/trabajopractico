@@ -15,17 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sentencia->bindParam(":ct_Descripcion_categoria", $ct_Descripcion_categoria);
 
 
-    if ($sentencia->execute()) {
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error al ejecutar la consulta";
-    }
+    $sentencia->execute();
+    header("Location:index.php?mensaje='Categoria creado correctamente'");
+     
 }
-
 ?>
 
-<?php require_once("../../templates/header.php") ?>
+<?php require_once("../../templates/header.php")?>
     <div class="card">
         <div class="card-header">
             Datos de Categorias
@@ -46,4 +42,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         
     </div>
-<?php require_once("../../templates/footer.php") ?>
+    <?php require_once("../../templates/footer.php") ?> 

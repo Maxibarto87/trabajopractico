@@ -20,13 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sentencia->bindParam(":st_Cantidad_total_en_existencia", $st_Cantidad_total_en_existencia);
 
     if ($sentencia->execute()) {
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error al ejecutar la consulta";
-    }
-}
+    header("Location:index.php?mensaje='stock creado correctamente'");
 
+}
+}
 ?>
 
 <?php require_once("../../templates/header.php"); ?>
