@@ -33,16 +33,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sentencia->bindParam(":st_N_de_existencia", $st_N_de_existencia);
     $sentencia->bindParam(":st_Categoria", $st_Categoria);
     $sentencia->bindParam(":st_Cantidad_total_en_existencia", $st_Cantidad_total_en_existencia);
-    if ($sentencia->execute()) {
-        echo "";
-    } else {
-        echo "Error al actualizar el registro";
-    }
+    $sentencia->execute();
+    header ("Location: index.php?mensaje=".$mensaje='Stock editado correctamente');
 }
 
 require_once("../../templates/header.php");
-?>
+if (isset($_GET["mensaje"])) { ?>
 
+<script>
+Swal.fire({
+    icon: "success",
+    title: "<?php echo $_GET['mensaje']; ?>"
+});
+</script>
+
+<?php } ?>
 <div class="card">
     <div class="card-header">
         Editar

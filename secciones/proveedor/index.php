@@ -9,7 +9,7 @@ if (isset($_GET["txtID"])) {
     // Asignar los valores que vienen del método GET
     $sentencia->bindParam(":id_pr", $txtID);
     $sentencia->execute();
-    header("Location: index.php");
+    header ("Location: index.php?mensaje=".$mensaje='Proveedor Eliminado');
     exit();
 }
 
@@ -17,11 +17,17 @@ $sentencia = $conexion->prepare("SELECT * FROM `proveedor`");
 $sentencia->execute();
 $lista_proveedor = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
-?>
+require_once("../../templates/header.php");
+if (isset($_GET["mensaje"])) { ?>
 
+<script>
+Swal.fire({
+    icon: "success",
+    title: "<?php echo $_GET['mensaje']; ?>"
+});
+</script>
 
-
-<?php require_once("../../templates/header.php") ?>
+<?php } ?>
 <h1>Proveedor</h1>   
 <div class="card">
     <div class="card-header">

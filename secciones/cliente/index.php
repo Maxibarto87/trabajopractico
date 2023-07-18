@@ -9,7 +9,7 @@ if (isset($_GET["txtID"])) {
     // Asignar los valores que vienen del método GET
     $sentencia->bindParam(":id_cl", $txtID);
     $sentencia->execute();
-    header("Location: index.php");
+    header ("Location: index.php?mensaje=".$mensaje='Cliente editado correctamente');
     exit();
 }
 

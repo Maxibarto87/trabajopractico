@@ -9,13 +9,14 @@ if (isset($_GET["txtID"])) {
     // Asignar los valores que vienen del método GET
     $sentencia->bindParam(":id_st", $txtID);
     $sentencia->execute();
-    header ("Location: index.php?mensaje=".$mensaje='stock Eliminado');
+    header ("Location: index.php?mensaje=".$mensaje='Stock Eliminado');
     exit();
 }
 
 $sentencia = $conexion->prepare("SELECT * FROM `stock`");
 $sentencia->execute();
 $lista_stock = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+
 
 
 require_once("../../templates/header.php");
@@ -96,7 +97,7 @@ Swal.fire({
         window.location = 'index.php?txtID=' + id_st;
         Swal.fire(
         '¡Borrado!',
-        'El dato stock ha sido borrado con éxito',
+        'El stock ha sido borrado con éxito',
         'success'
       );
       

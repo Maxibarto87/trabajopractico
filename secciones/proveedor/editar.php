@@ -41,16 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sentencia->bindParam(":pr_Direccion", $pr_Direccion);
     $sentencia->bindParam(":pr_CUIT", $pr_CUIT);
     $sentencia->bindParam(":pr_Telefono", $pr_Telefono);
-    if ($sentencia->execute()) {
-        echo "";
-    } else {
-        echo "Error al actualizar el registro";
-    }
+    $sentencia->execute();
+    header ("Location: index.php?mensaje=".$mensaje='Proveedor editado correctamente');
 }
 
 require_once("../../templates/header.php");
-?>
+if (isset($_GET["mensaje"])) { ?>
 
+<script>
+Swal.fire({
+    icon: "success",
+    title: "<?php echo $_GET['mensaje']; ?>"
+});
+</script>
+
+<?php } ?>
 <div class="card">
         <div class="card-header">
             Editar Proveedores
