@@ -22,7 +22,7 @@ if ($_POST) {
         $mensaje = "Error: el usuario o contraseña son incorrectos.";
     }
 }
-
+require_once("../templates/header.php");
 ?>
 
 <!doctype html>
@@ -55,7 +55,7 @@ if ($_POST) {
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        Usuario
+                        Usuarios
                     </div>
                     <div class="card-body">
                         <?php if (isset($mensaje)) { ?>
