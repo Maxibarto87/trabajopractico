@@ -63,6 +63,8 @@ Swal.fire({
         <div class="card-body">
             <form action="" method="post">
                 <div class="mb-3">
+                <label for="txtID" class="form-label">ID:</label>
+                <input type="text" class="form-control" name="txtID" id="txtID" aria-describedby="helpId">
                   <label for="pr_Nombre_de_fantasia" class="form-label">Nombre de Fantasia</label>
                   <input type="text" class="form-control" name="pr_Nombre_de_fantasia" id="pr_Nombre_de_fantasia" aria-describedby="helpId" placeholder="Ingrese su Nombre de Fantasia">  
                         <br>

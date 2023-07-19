@@ -1,8 +1,3 @@
-
-Aquí tienes el código corregido:
-
-php
-Copy code
 <?php
 require_once("../../libs/conexion.php");
 
@@ -45,6 +40,8 @@ require_once("../../templates/header.php");
     <div class="card-body">
         <form action="" method="post">
             <div class="mb-3">
+            <label for="txtID" class="form-label">ID:</label>
+                <input type="text" class="form-control" name="txtID" id="txtID" aria-describedby="helpId">
                 <label for="ct_Nombre_categoria" class="form-label">Editar nombre de categoria</label>
                 <input type="text" class="form-control" name="ct_Nombre_categoria" id="ct_Nombre_categoria" aria-describedby="helpId" placeholder="Ingrese su nombre de categoria" value="<?php echo $ct_Nombre_categoria; ?>">
                 <br>

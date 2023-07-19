@@ -26,7 +26,7 @@ $url_base = "http://localhost/app/"
     <nav class="navbar navbar-expand navbar-light bg-light">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="<?php echo $url_base?>secciones/inicio" aria-current="page">Inicio<span class="visually-hidden">(current)</span></a>
+                <a class="nav-link active" href="<?php echo $url_base ?>login.php" aria-current="page">Inicio<span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base?>secciones/stock">Stock</a>
@@ -41,7 +41,10 @@ $url_base = "http://localhost/app/"
                 <a class="nav-link" href="<?php echo $url_base?>secciones/proveedor">Proveedor</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo $url_base?>seccion/cerrar sesion">Cerrar</a>
+                <a class="nav-link" href="<?php echo $url_base?>secciones/usuarios">usuarios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo $url_base?>/libs/cerrar.php">Cerrar</a>
             </li>
         </ul>
     </nav>
