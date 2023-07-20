@@ -22,7 +22,7 @@ if ($_POST) {
         $mensaje = "Error: el usuario o contraseña son incorrectos.";
     }
 }
-require_once("../templates/header.php");
+
 ?>
 
 <!doctype html>

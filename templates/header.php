@@ -1,11 +1,13 @@
 <?php
-$url_base = "http://localhost/app/"
-?>
+
+$url_base = "http://localhost/app/"; 
+
+
 <!doctype html>
 <html lang="en">
 
 <head>
-<title>Administraciòn</title>
+<title>Administracion</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +46,7 @@ $url_base = "http://localhost/app/"
                 <a class="nav-link" href="<?php echo $url_base?>secciones/usuarios">usuarios</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo $url_base?>/libs/cerrar.php">Cerrar</a>
+                <a class="nav-link" href="<?php echo $url_base?>libs/cerrar.php">Cerrar</a>
             </li>
         </ul>
     </nav>
