@@ -2,7 +2,7 @@
 
 $url_base = "http://localhost/app/"; 
 
-
+?>
 <!doctype html>
 <html lang="en">
 
