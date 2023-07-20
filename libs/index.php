@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once("../templates/header.php") ?>
+require_once("../templates/header.php");
+?>
 <br>
 <div class="p-5 mb-4 bg-light rounded-3">
     <div class="container-fluid py-5">
@@ -11,4 +12,5 @@ require_once("../templates/header.php") ?>
         <button class="btn btn-primary btn-lg" type="button">Inicio</button>
     </div>
 </div>
-<?php require_once("../templates/footer.php") ?>
+
+<?php require_once("../templates/footer.php"); ?>

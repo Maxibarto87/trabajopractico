@@ -2,6 +2,7 @@
 
 $url_base = "http://localhost/app/"; 
 
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -18,13 +19,15 @@ $url_base = "http://localhost/app/";
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
   crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
+  <link rel="stylesheet" href="../libs/style.css">
   
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>
+ 
 </head>
 
 <body>
-<header>
+<header class="header">
     <nav class="navbar navbar-expand navbar-light bg-light">
         <ul class="nav navbar-nav">
             <li class="nav-item">
