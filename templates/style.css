@@ -2,15 +2,16 @@ body{
     font-family:"Audiowide", sans-serif ;
     background-color: #06F62A;
     justify-content: center;
+    text-
     z-index:auto;
     
 }
 
 h1 {
     background-color: #E6F00B;
-    padding: 5px;
+    padding: 5em;
     display: grid;
-    margin: 5px;
+    margin: 5em;
     border-radius:3vw;
 }
 header{

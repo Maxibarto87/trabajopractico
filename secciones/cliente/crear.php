@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     // Preparar la inserción de datos
-    $sentencia = $conexion->prepare("INSERT INTO cliente (id_us,cl_Nombre, cl_Apellido, cl_Email, cl_Direccion, cl_CUIT, cl_Telefono) VALUES (NULL,:cl_Nombre, :cl_Apellido, :cl_Email, :cl_Direccion, :cl_CUIT, :cl_Telefono)");
+    $sentencia = $conexion->prepare("INSERT INTO cliente (id_cl,cl_Nombre, cl_Apellido, cl_Email, cl_Direccion, cl_CUIT, cl_Telefono) VALUES (NULL,:cl_Nombre, :cl_Apellido, :cl_Email, :cl_Direccion, :cl_CUIT, :cl_Telefono)");
 
     $sentencia->bindParam(":cl_Nombre", $cl_Nombre);
     $sentencia->bindParam(":cl_Apellido", $cl_Apellido);
