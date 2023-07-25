@@ -57,6 +57,7 @@ div{
     justify-items: center;
     margin: 10px;
     border: 1px solid #160296;
+    border-radius: 40px;
    
     
 }
@@ -84,6 +85,7 @@ display-5 fw-bold{
     margin:auto;
     justify-content: center;
     border: 2px inset #aa6804;
+    border-radius: 20px;
    
     
     
