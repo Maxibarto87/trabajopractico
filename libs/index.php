@@ -12,5 +12,5 @@ require_once("../templates/header.php");
         <button class="btn btn-primary btn-lg" type="button">Inicio</button>
     </div>
 </div>
-
+   <img src="../assets/img/Administración.jpg" alt="Esta es una foto de administracion" class="img">
 <?php require_once("../templates/footer.php"); ?>
