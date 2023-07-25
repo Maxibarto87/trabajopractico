@@ -2,6 +2,11 @@ body{
     font-family:"Audiowide", sans-serif ;
     background-color: #06F62A;
     justify-content: center;
+    display:grid;
+    border: 2px darkblue;
+    
+    
+    height: auto;
     /* background-image: url(../assets/img/Administración.jpg);
     background-attachment:scroll; */
    
@@ -9,7 +14,7 @@ body{
 
 h1 {
     background-color: #E6F00B;
-    padding: 2px;
+    padding: 10px;
     display: grid;
     margin: 2px;
     border-radius:3vw;
@@ -24,7 +29,7 @@ li {
    display: inline-block;
    padding: 3px;
    text-align: center;
-   margin: 3px;
+   margin: 6px;
    border-radius: 3vw;
    justify-content:center;
    box-shadow: 5px 5px 10px #000;
@@ -43,21 +48,32 @@ nav {
 card-label{
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 div{
     background-color: #d27b09;
     display: grid;
     text-align: center;
     justify-items: center;
-    border: 5px solid #160296;
-    
-}
-display-5 fw-bold{
-    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid #160296;
+   
     
 }
 
-ul:hover{
+p-5 mb-4 bg-light rounded-3{
+   height: 1px;
+   min-width: 410vw;
+   margin: auto;
+}
+
+display-5 fw-bold{
+    border-radius: 20px;
+    margin: auto;
+    
+}
+
+.ul:hover{
     color: #E6F00B;
 }
 
@@ -65,6 +81,10 @@ ul:hover{
     width: 500px;
     height: 500px;
     display:flex;
+    margin:auto;
+    justify-content: center;
+    border: 2px inset #aa6804;
+   
     
     
 }
