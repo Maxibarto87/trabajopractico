@@ -1,23 +1,25 @@
 body{
+    margin: 0;
     font-family:"Audiowide", sans-serif ;
     background-color: #06F62A;
-    justify-content: center;
-    display:grid;
-    border: 2px darkblue;
+    color: #160296;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
     
     
-    height: auto;
     /* background-image: url(../assets/img/Administración.jpg);
     background-attachment:scroll; */
    
 }
 
 h1 {
-    background-color: #E6F00B;
-    padding: 10px;
-    display: grid;
-    margin: 2px;
-    border-radius:3vw;
+    color: #0f04ac;
+    margin-top:50px ;
+    
+    
+    margin: 1px;
+    border-radius:3px;
     
 }
 header{
@@ -33,7 +35,7 @@ li {
    border-radius: 3vw;
    justify-content:center;
    box-shadow: 5px 5px 10px #000;
-   text-shadow: 2px 2px 7px #bee31c,2px 2px 7px #bee31c,2px 2px 7px #bee31c;
+   text-shadow: 2px 2px 7px #ffffff,2px 2px 7px #ffffff,2px 2px 7px #ffffff;
 
   
 }
@@ -50,11 +52,11 @@ card-label{
     justify-content: center;
     margin: auto;
 }
-div{
+{
     background-color: #d27b09;
     display: grid;
     text-align: center;
-    justify-items: center;
+    
     margin: 10px;
     border: 1px solid #160296;
     border-radius: 40px;
@@ -73,21 +75,32 @@ display-5 fw-bold{
     margin: auto;
     
 }
-
-.ul:hover{
-    color: #E6F00B;
+footer {
+    background-color: #aa6804;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: auto;
 }
 
-.img {
+
+ul:hover{
+    color: #E6F00B;
+}
+redes-sociales {
+    display: flex;
+    justify-content: center;
+    color: #06F62A;
+    padding: 10px;
+}
+img {
     width: 500px;
     height: 500px;
     display:flex;
     margin:auto;
     justify-content: center;
-    border: 2px inset #aa6804;
+    border: 2px inset #13017a;
     border-radius: 20px;
    
     
     
 }
-
