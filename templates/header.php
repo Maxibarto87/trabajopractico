@@ -55,5 +55,9 @@ $url_base = "http://localhost/app/";
     </nav>
     
 </header>
+    
 <main class="container">
     <br>
+<div class="administracion">
+        <img src="../assets/img/Administración.jpg" alt="">
+    </div>
