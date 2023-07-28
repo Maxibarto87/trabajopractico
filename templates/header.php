@@ -31,7 +31,7 @@ $url_base = "http://localhost/app/";
     <nav class="navbar navbar-expand navbar-light bg-light">
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <b></b><a class="nav-link active" href="<?php echo $url_base ?>libs/login.php" aria-current="page">Inicio<span class="visually-hidden">(current)</span></a>
+              <a class="nav-link active" href="<?php echo $url_base ?>libs/login.php" aria-current="page">Inicio<span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo $url_base?>secciones/stock">Stock</a>
