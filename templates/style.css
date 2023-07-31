@@ -21,6 +21,7 @@ body{
     flex-direction: row;
     flex-wrap:wrap;
     justify-content: center;
+    width: 100%;
     
     gap: 40px;
     
@@ -141,6 +142,7 @@ redes-sociales {
     display: flex;
     flex-direction: column;
     margin: auto;
+    width: 100%;
    }
    
    navbar-nav {

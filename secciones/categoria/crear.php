@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             Datos de Categorias
         </div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="" method="post" class="reservation">
                 <div class="mb-3">
                   <label for="ct_Nombre_categoria" class="form-label">Nombre de Categoria</label>
                   <input type="text" class="form-control" name="ct_Nombre_categoria" id="ct_Nombre_categoria" aria-describedby="helpId" placeholder="Ingrese Nombre de Categoria">
