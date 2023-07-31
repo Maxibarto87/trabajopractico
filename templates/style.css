@@ -138,6 +138,7 @@ redes-sociales {
     
    }
    header {
+    display: flex;
     flex-direction: column;
     margin: auto;
    }
